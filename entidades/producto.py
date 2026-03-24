@@ -10,5 +10,5 @@ class Producto:
     def comprar_producto(self):
         if self.cantidad_existencias > 0:
             self.cantidad_existencias -= 1
-            operacion = self.precio_unitario - #Variable carlos
-            return f"Compra procesada del articulo. Precio: {self.precio_unitario})
+            operacion = pago - self.precio_unitario#Variable carlos
+            return f"Compra procesada del articulo. Precio: {self.precio_unitario}, Cambio {operacion}"
