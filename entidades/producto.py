@@ -11,4 +11,4 @@ class Producto:
         if self.cantidad_existencias > 0:
             self.cantidad_existencias -= 1
             operacion = pago - self.precio_unitario#Variable carlos
-            return f"Compra procesada del articulo. Precio: {self.precio_unitario}, Cambio {operacion}"
+            return f"Compra procesada del articulo. Precio: {self.precio_unitario}, Cambio {operacion}, Gracias por su compra."

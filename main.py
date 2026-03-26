@@ -34,12 +34,12 @@ def ver_menu():
 
 def ver_productos():
     for i, producto in enumerate(productos, 1):
-        print(f"{i}. {producto.nombre} - ${producto.precio} - Stock: {producto.stock}")
+        print(f"{i}. {producto.nombre} - ${producto.precio_unitario} - Stock: {producto.cantidad_existencias}")
 
 def comprar_producto():
     print("Productos disponibles:")
     for i, producto in enumerate(productos, 1):
-        print(f"{i}. {producto.nombre} - ${producto.precio}")
+        print(f"{i}. {producto.nombre} - ${producto.precio_unitario}")
     
     try:
         seleccion = int(input("\nSeleccione el número del producto que desea comprar: "))
@@ -47,14 +47,14 @@ def comprar_producto():
         if 1 <= seleccion <= len(productos):
             producto_elegido = productos[seleccion - 1]
             
-            if producto_elegido.stock > 0:
+            if producto_elegido.cantidad_existencias > 0:
                 print(f"\nProducto: {producto_elegido.nombre}")
                 print(f"Precio: ${producto_elegido.precio}")
                 
                 pago = float(input("Ingrese el monto a pagar: $"))
                 
-                if pago >= producto_elegido.precio:
-                    cambio = pago - producto_elegido.precio
+                if pago >= producto_elegido.precio_unitario:
+                    cambio = pago - producto_elegido.precio_unitario
                     producto_elegido.stock -= 1
                     print(f"\n¡Compra exitosa!")
                     print(f"Su cambio: ${cambio}")
